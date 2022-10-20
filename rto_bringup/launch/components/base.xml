@@ -26,10 +26,15 @@
         <remap from="rto_joint_states" to="joint_states" />
     </node>
     
+    
+    <node name="rto_laser" pkg="rto_node" type="rto_laserrangefinder_node" output="screen">
+        <param name="hostname" value="$(arg robot_ip)" />
+    </node>
+    
     <!-- Start-up robot-state-publisher for tf info -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
     	<param name="publish_frequency" type="double" value="20.0" />
-  	</node>
+   </node>
 
 
 
